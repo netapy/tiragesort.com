@@ -73,34 +73,13 @@
 
 	<script>
 		var chiffreMax = 10;
-		var lastPRessed;
 		var Asaisir;
 
 		function getRandomInt(max) {return Math.floor(Math.random() * Math.floor(max));}
 
-		document.onkeypress = function(evt) {
-			evt = evt || window.event;
-			var charCode = evt.keyCode || evt.which;
-			var charStr = String.fromCharCode(charCode);
-			lastPRessed = charStr;
-		};
-
 		function remplissageChiffreGen(){
-			if (lastPRessed == "w") {
-				Asaisir = "34"
-			} else if (lastPRessed == "x") {
-				Asaisir = "261"
-			} else if (lastPRessed == "c") {
-				Asaisir = "109"
-			} else if (lastPRessed == "q") {
-				Asaisir = "87"
-			} else {
-				Asaisir = getRandomInt(chiffreMax)
-			}
+			Asaisir = getRandomInt(chiffreMax);
 			document.getElementById('chiffre_genere').innerHTML = Asaisir ;
-
-			lastPRessed = "p"
-
 		}
 
 	</script>
