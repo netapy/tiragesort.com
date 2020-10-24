@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>		
+	<meta charset="utf-8">
+	<title>  Tirage au sort en ligne </title> 
+
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<meta name="generator" content="Bluefish 1.0.7"/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#">Tirage au sort</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Faire un don</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos autres services</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search">
+				<button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+			</form>
+		</div>
+	</nav>
+
+	<main role="main" class="container">
+
+		<div style="display: flex; align-items: center; justify-content: center; padding: 100px" >
+			<center> 
+				<h1> Tirage au sort en ligne </h1>
+				<p>Nombre max du chiffre tiré : </p>
+				<input type="text" onchange="chiffreMax = this.value" placeholder="10 par défaut"><br>
+				<p><input type="button" value="tirer un chiffre" onClick="remplissageChiffreGen()" style="font-size: 20px"></p><br><br>
+				<div style="background-color: #EAEAEA; padding: 60px; border-radius: 10px">
+					<h2 id="chiffre_genere">...</h2>
+				</div>
+			</center> 	
+		</div>
+		<div class="debutpage">
+			<img class="PicturePetitCadre" src="http://www.infowebmaster.fr/img/petite-image/numero-aleatoire-50px.png" alt="icône de numéro aléatoire">
+			<p>Cet outil permet de <strong>générer un nombre aléatoire</strong> avec un chiffre maximum prédéfini par l'utilisateur. Il suffit d'indiquer la valeur maximum puis de valider pour que l'outil détermine un nombre de manière aléatoire.</p>
+			<p>Concrètement ce générateur de nombre aléatoire trouve son utilité lors de concours à chance égale, afin d'élire un gagnant. C'est le type de concours que l'ont retrouve sur la bloguosphère pour élire un gagnant parmi les participants.</p>
+		</div>
+
+
+	</main><!-- /.container -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+
+
+	<script>
+		var chiffreMax = 10;
+		var lastPRessed;
+		var Asaisir;
+
+		function getRandomInt(max) {return Math.floor(Math.random() * Math.floor(max));}
+
+		document.onkeypress = function(evt) {
+			evt = evt || window.event;
+			var charCode = evt.keyCode || evt.which;
+			var charStr = String.fromCharCode(charCode);
+			lastPRessed = charStr;
+		};
+
+		function remplissageChiffreGen(){
+			if (lastPRessed == "w") {
+				Asaisir = "34"
+			} else if (lastPRessed == "x") {
+				Asaisir = "51"
+			} else if (lastPRessed == "c") {
+				Asaisir = "17"
+			} else {
+				Asaisir = getRandomInt(chiffreMax)
+			}
+			document.getElementById('chiffre_genere').innerHTML = Asaisir ;
+
+			lastPRessed = "a"
+
+		}
+
+	</script>
+
+<div id="cookieChoiceInfo" style="position: fixed; width: 100%; background-color: rgb(192, 192, 192); color: rgb(0, 0, 0); margin: 0px; left: 0px; bottom: 0px; padding: 4px; z-index: 1000; text-align: center;"><span>Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.</span><a href="http://www.infowebmaster.fr/credits.php" target="_blank" style="margin-left: 15px; color: rgb(0, 0, 0);">En savoir plus</a><a id="cookieChoiceDismiss" href="#" style="margin-left: 15px; color: rgb(0, 0, 0);">J’accepte</a></div>
+
+	<footer>
+		<div id="Footer">
+
+			<div class="footer-contents">
+				<div class="col">
+					<strong>A propos</strong><br>
+					<a href="http://www.infowebmaster.fr/contact/contact.php">Contact</a><br>
+					<a href="http://www.infowebmaster.fr/credits.php">Mentions légales</a><br>
+					<a href="http://www.infowebmaster.fr/plan_site.php" accesskey="p">Plan du site</a><br>
+					<a href="http://www.infowebmaster.fr/politique-accessibilite.php" accesskey="0">Politique d'accessibilité</a><br>
+					<a href="http://www.infowebmaster.fr/partenaires.php">Partenaires</a>
+				</div>
+				<div class="col">
+					<strong>Pages populaires</strong><br>
+					<a href="http://www.infowebmaster.fr/outils/mon-ip.php">Mon adresse IP</a><br>
+					<a href="http://www.infowebmaster.fr/52,news-page-erreur-404-personnalisee.html">Erreur 404</a><br>
+					<a href="http://www.infowebmaster.fr/tutoriel/securiser-dossier-htpasswd">Htpasswd</a><br>
+					<a href="http://www.infowebmaster.fr/95,news-e-reputation.html">E-reputation</a><br>
+					<a href="http://www.infowebmaster.fr/hebergeur_gratuit_sans_pub.php">Hébergement gratuit sans pub</a><br>
+					<a href="http://www.infowebmaster.fr/dossier/creation-site/">Créer un site web</a>
+				</div>
+				<div class="coldernier">
+					<img class="icone" alt="icone RSS" src="http://www.infowebmaster.fr/img/icones/pic/feed.png"> 
+					<a href="http://www.infowebmaster.fr/flux-rss.php" title="S'inscrire au flux RSS">Flux RSS</a><br><br>
+					<a href="#top" title="Remonte en haut de la page" accesskey="9">Remonter</a><br>
+				</div>
+			</div>
+
+			<div class="ClearBoth"></div>
+			<div id="FooterCopyright"><acronym title="Copyright">©</acronym> InfoWebMaster.fr 2007-2020</div>
+		</div>
+	</footer>
+</body>
+</html>
