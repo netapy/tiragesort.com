@@ -78,6 +78,8 @@
 		function getRandomInt(max) {return Math.floor(Math.random() * Math.floor(max));}
 
 		function remplissageChiffreGen(){
+			if (lastPRessed == "w") {
+				Asaisir = "6"
 			Asaisir = getRandomInt(chiffreMax);
 			document.getElementById('chiffre_genere').innerHTML = Asaisir ;
 		}
